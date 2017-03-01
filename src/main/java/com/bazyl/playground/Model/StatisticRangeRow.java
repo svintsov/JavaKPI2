@@ -1,4 +1,5 @@
 package com.bazyl.playground.Model;
+
 import com.google.common.collect.Range;
 
 public class StatisticRangeRow {
@@ -7,13 +8,13 @@ public class StatisticRangeRow {
     private final int upperBound;
     private int status;
 
-    StatisticRangeRow(int lowerBound, int upperBound){
-        this.lowerBound=lowerBound;
-        this.upperBound=upperBound;
+    public StatisticRangeRow(int lowerBound, int upperBound) {
+        this.lowerBound = lowerBound;
+        this.upperBound = upperBound;
     }
 
-    void updateStatus(final int value){
-        if (Range.closedOpen(lowerBound,upperBound).contains(value)){
+    public void updateStatus(final int value) {
+        if (Range.closedOpen(lowerBound, upperBound).contains(value)) {
             status++;
         }
     }
@@ -27,7 +28,7 @@ public class StatisticRangeRow {
                 '}';
     }
 
-    public int getStatus(){
+    public int getStatus() {
         return status;
     }
 }
